@@ -14,7 +14,10 @@ void tabulation(double tabulatedValues[], double x_min, double x_max,
   for (int i = 0; i < SIZE; i++) {
     tabulatedValues[i] = sin(x_min * x_min);
     x_min += h;
-    printf(" sin((%.2lf)^2): %.15lf\t\n", x_min - 0.1, tabulatedValues[i]);
+    if (tabulatedValues[i] > 0)
+      printf("sin((%.2lf)^2):  %.15lf\n", x_min - 0.1, tabulatedValues[i]);
+    else
+      printf("sin((%.2lf)^2): %.15lf\n", x_min - 0.1, tabulatedValues[i]);
   }
   printf(White);
 
@@ -30,7 +33,10 @@ void tabulation(double tabulatedValues[], double x_min, double x_max,
   printf("\nSorted elements of function y = (sin (x^2)): \n\n");
   printf(Purple);
   for (int i = 0; i < SIZE; i++) {
-    printf("%.15lf\t\n ", tabulatedValues[i]);
+    if (tabulatedValues[i] > 0)
+      printf(" %.15lf\n", tabulatedValues[i]);
+    else
+      printf("%.15lf\n", tabulatedValues[i]);
   }
 }
 
