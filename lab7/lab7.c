@@ -8,9 +8,8 @@ void printTwoDimArray(int array[SIZE][SIZE]);
 void printTwoDimArray(int array[SIZE][SIZE]) {
   printf(Cyan);
   for (int i = 0; i < SIZE; i++) {
-    for (int j = 0; j < SIZE; j++) {
+    for (int j = 0; j < SIZE; j++) 
       printf("%d", array[i][j]);
-    }
     printf("\n");
   }
 }
